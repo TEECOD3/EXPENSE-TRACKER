@@ -1,0 +1,40 @@
+.expense-date {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(197, 163, 188),
+    rgb(161, 44, 152)
+  );
+  border-radius: 1rem;
+  padding: 0.5rem 2rem;
+  border: 2px solid white;
+  color: white;
+  text-transform: uppercase;
+  gap: 0.4rem;
+
+  &__month {
+    font-size: 1rem;
+  }
+
+  &__day {
+    text-transform: lowercase;
+  }
+  &__year {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 90em) {
+  .expense-date {
+    padding: 0.5rem 1rem;
+
+    &__month {
+      font-size: 0.7rem;
+    }
+
+    &__day {
+      font-size: 1.3rem;
+    }
+  }
+}
