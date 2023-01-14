@@ -1,15 +1,30 @@
 import React from "react";
-import ExpenseItems from "../ExpenseItems/ExpenseItems";
-import "./Expense.modules.scss";
+import FilteredYear from "../Expensefilter/FilteredYear";
 
-function Expense() {
+import ExpenseList from "../ExpenseList/ExpenseList";
+
+import { useState } from "react";
+import "./Expense.modules.scss";
+import NewExpense from "../../NewExpense/NewExpense";
+
+function Expense({ items, ...otherprops }) {
+  const [filtered, setFilteredyear] = useState("2020");
+
+  const filteredyearhandler = (selectyear) => {
+    setFilteredyear(selectyear);
+  };
+
+  const filteredyear = items.filter((item) => {
+    return item.date.getFullYear().toString() === filtered;
+  });
+
   return (
-    <div>
-      <div className="home">
-        <div className="home__content">
-          <ExpenseItems />
-        </div>
-      </div>
+    <div className="Expenses">
+      <FilteredYear
+        selectedyear={filtered}
+        onChangeyear={filteredyearhandler}
+      />
+      <ExpenseList items={filteredyear} />
     </div>
   );
 }
