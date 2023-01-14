@@ -28,15 +28,19 @@
 
 @media (max-width: 90em) {
   .expense-date {
-    padding: 0.5rem 1rem;
-    flex-direction: column;
+    padding: 0.3rem 1rem;
+    // flex-direction: column;
 
     &__month {
-      font-size: 0.7rem;
+      font-size: 0.5rem;
     }
 
     &__day {
-      font-size: 1.3rem;
+      font-size: 1rem;
+    }
+
+    &__year {
+      font-size: 0.6rem;
     }
   }
 }

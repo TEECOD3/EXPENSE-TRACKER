@@ -1,0 +1,22 @@
+.expense-list {
+  padding: 1em;
+
+  &__error {
+    background-color: rgb(235, 157, 228);
+    padding: 1em;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(161, 44, 152);
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 90em) {
+  .expense-list {
+    padding: 0.6em;
+    &__error {
+      font-size: 1em;
+    }
+  }
+}

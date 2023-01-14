@@ -1,6 +1,8 @@
 import React from "react";
 import { IoMdAnalytics } from "react-icons/io";
 import Expense from "../components/Expenses/Expenses/Expense";
+import NewExpense from "../components/NewExpense/NewExpense";
+
 import "./home.modules.scss";
 
 const random_expenses = [
@@ -15,7 +17,7 @@ const random_expenses = [
     id: "e3",
     title: "Car Insurance",
     amount: 294.67,
-    date: new Date(2021, 2, 28),
+    date: new Date(2021, 9, 28),
   },
   {
     id: "e4",
@@ -29,17 +31,35 @@ const random_expenses = [
     amount: 1200,
     date: new Date(2022, 11, 12),
   },
+
+  {
+    id: "e4",
+    title: "laptop",
+    amount: 1200,
+    date: new Date(2022, 11, 12),
+  },
+  {
+    id: "e4",
+    title: "laptop",
+    amount: 1200,
+    date: new Date(2022, 11, 12),
+  },
 ];
 function Home() {
   return (
     <>
-      <nav className="navigation">
+      <div className="navigation">
         <div className="navigation__logo">
           <span>XPENSE-TRACKER</span>
           <IoMdAnalytics className="navigation__icon" />
         </div>
-      </nav>
-      <Expense items={random_expenses} />
+      </div>
+      <div className="home">
+        <div className="home__content">
+          <NewExpense />
+          <Expense items={random_expenses} />
+        </div>
+      </div>
     </>
   );
 }
