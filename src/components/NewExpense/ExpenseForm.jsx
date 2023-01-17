@@ -3,7 +3,7 @@ import { useState } from "react";
 import { IoIosDoneAll, IoIosExit } from "react-icons/io";
 import "./ExpenseForm.modules.scss";
 
-function ExpenseForm() {
+function ExpenseForm({ onAddexpense, onCancel }) {
   const [userinput, setUserinput] = useState({
     enteredTitle: "",
     enteredDate: "",
@@ -30,7 +30,9 @@ function ExpenseForm() {
     event.preventDefault();
 
     const expenseData = userinput;
-    console.log(expenseData);
+
+    onAddexpense(expenseData);
+
     setUserinput({
       enteredTitle: "",
       enteredDate: "",
@@ -53,9 +55,7 @@ function ExpenseForm() {
             <div className="expense-form__control expense-form__control--amt">
               <label htmlFor="">Amount</label>
               <input
-                // value={(prevState) => {
-                //   return { ...prevState, enteredAmount: "" };
-                // }}
+                value={{ ...userinput }.enteredAmount}
                 type="text"
                 onChange={amountHandler}
               />
@@ -65,25 +65,17 @@ function ExpenseForm() {
             <div className="expense-form__control">
               <label htmlFor="name">date</label>
               <input
-                // value={(prevState) => {
-                //   return { ...prevState, enteredDate: "" };
-                // }}
+                value={{ ...userinput }.enteredDate}
                 onChange={dateHandler}
                 type="date"
               />
             </div>
 
             <div className="buttons">
-              <button type="reset" className="uiverse">
-                <span className="tooltip">
-                  <IoIosExit />
-                </span>
+              <button onClick={onCancel} type="reset">
                 <span>cancel</span>
               </button>
-              <button type="submit" className="uiverse">
-                <span className="tooltip">
-                  <IoIosDoneAll />
-                </span>
+              <button type="submit">
                 <span>add</span>
               </button>
             </div>
