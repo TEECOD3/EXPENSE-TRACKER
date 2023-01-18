@@ -4,40 +4,34 @@ import { IoIosDoneAll, IoIosExit } from "react-icons/io";
 import "./ExpenseForm.modules.scss";
 
 function ExpenseForm({ onAddexpense, onCancel }) {
-  const [userinput, setUserinput] = useState({
-    enteredTitle: "",
-    enteredDate: "",
-    enteredAmount: "",
-  });
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
 
   const titleHandler = (event) => {
-    setUserinput((prevState) => {
-      return { ...prevState, enteredTitle: event.target.value };
-    });
+    setEnteredTitle(event.target.value);
   };
   const amountHandler = (event) => {
-    setUserinput((prevState) => {
-      return { ...prevState, enteredAmount: event.target.value };
-    });
+    setEnteredAmount(event.target.value);
   };
   const dateHandler = (event) => {
-    setUserinput((prevState) => {
-      return { ...prevState, enteredDate: event.target.value };
-    });
+    setEnteredDate(event.target.value);
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
 
-    const expenseData = userinput;
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate),
+    };
 
     onAddexpense(expenseData);
 
-    setUserinput({
-      enteredTitle: "",
-      enteredDate: "",
-      enteredAmount: "",
-    });
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate("");
   };
   return (
     <>
@@ -46,16 +40,12 @@ function ExpenseForm({ onAddexpense, onCancel }) {
           <div className="expense-form__split">
             <div className="expense-form__control">
               <label htmlFor="name">title</label>
-              <input
-                value={{ ...userinput }.enteredTitle}
-                type="text"
-                onChange={titleHandler}
-              />
+              <input value={enteredTitle} type="text" onChange={titleHandler} />
             </div>
             <div className="expense-form__control expense-form__control--amt">
               <label htmlFor="">Amount</label>
               <input
-                value={{ ...userinput }.enteredAmount}
+                value={enteredAmount}
                 type="text"
                 onChange={amountHandler}
               />
@@ -65,9 +55,11 @@ function ExpenseForm({ onAddexpense, onCancel }) {
             <div className="expense-form__control">
               <label htmlFor="name">date</label>
               <input
-                value={{ ...userinput }.enteredDate}
+                value={enteredDate}
                 onChange={dateHandler}
                 type="date"
+                min="2019-01-01"
+                max="2022-12-31"
               />
             </div>
 

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.modules.scss";
-function NewExpense() {
+function NewExpense({ addedExpense }) {
   const [isEditing, setIsEditing] = useState(false);
   const starteditingHandler = () => {
     setIsEditing(true);
@@ -12,8 +12,8 @@ function NewExpense() {
     setIsEditing(false);
   };
   const onaddExpenseHandler = (enteredExpensesdata) => {
-    const expensedata = { ...enteredExpensesdata };
-    console.log(expensedata);
+    const expensedata = { ...enteredExpensesdata, id: Math.random() };
+    addedExpense(expensedata);
   };
   return (
     <>

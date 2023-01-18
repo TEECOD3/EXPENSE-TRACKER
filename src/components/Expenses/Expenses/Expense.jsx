@@ -24,7 +24,7 @@ function Expense({ items, ...otherprops }) {
         selectedyear={filtered}
         onChangeyear={filteredyearhandler}
       />
-      <ExpenseList items={filteredyear} />
+      <ExpenseList item={filteredyear} />
     </div>
   );
 }

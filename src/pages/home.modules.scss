@@ -1,4 +1,6 @@
 .navigation {
+  margin-bottom: 8rem;
+
   &__logo {
     display: flex;
     align-items: center;
@@ -47,10 +49,12 @@
     width: 60%;
     box-shadow: 1rem 1rem 4rem rgba(rgba(0, 0, 0, 0.788), 0.4);
     border-radius: 1em;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 0 auto;
+
+    // position: absolute;
+    // top: 55%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
   }
 }
 
