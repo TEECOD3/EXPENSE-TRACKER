@@ -3,8 +3,11 @@ import Chartbar from "./Chartbar";
 import "./Chart.scss";
 
 function Chart({ datapoints }) {
+
   const chartvalues = datapoints.map((data) => data.value);
   const maximumValue = Math.max(...chartvalues);
+
+  
   return (
     <div className="chart">
       {datapoints.map((data) => (

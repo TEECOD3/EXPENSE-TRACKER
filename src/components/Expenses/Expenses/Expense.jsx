@@ -21,7 +21,7 @@ function Expense({ items, ...otherprops }) {
 
   return (
     <div className="Expenses">
-      <Expensechart expenses={filteredyear} />
+      <Expensechart expenseschart={filteredyear} />
       <FilteredYear
         selectedyear={filtered}
         onChangeyear={filteredyearhandler}
