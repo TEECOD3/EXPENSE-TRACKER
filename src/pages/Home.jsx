@@ -5,6 +5,7 @@ import NewExpense from "../components/NewExpense/NewExpense";
 import { useState } from "react";
 
 import "./home.modules.scss";
+import Expensechart from "../components/Chart/expensechart";
 
 const random_expenses = [
   {
