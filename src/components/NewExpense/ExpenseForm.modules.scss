@@ -48,6 +48,10 @@
 
 @media (max-width: 50em) {
   .expense-form {
+    
+    label{
+      font-size:0.5em;
+    }
     &__control--amt {
      
       margin-top: 1em;
