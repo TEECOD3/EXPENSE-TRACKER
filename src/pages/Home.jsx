@@ -9,7 +9,7 @@ import Expensechart from "../components/Chart/expensechart";
 
 const random_expenses = [
   {
-    id: "394",
+    id: "3941",
     title: "Toilet Paper",
     amount: 94.12,
     date: new Date(2020, 7, 14),
