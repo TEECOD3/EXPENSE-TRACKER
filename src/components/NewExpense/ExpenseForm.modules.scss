@@ -35,7 +35,7 @@
     margin-top: 1em;
     align-items: center;
     &--second {
-      margin-left: -2em;
+      // margin-left: -2em;
     }
   }
 
@@ -48,6 +48,10 @@
 
 @media (max-width: 50em) {
   .expense-form {
+
+    label{
+      font
+    }
     &__control--amt {
       margin-top: 1em;
     }

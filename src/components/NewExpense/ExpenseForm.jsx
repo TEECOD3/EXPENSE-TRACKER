@@ -51,6 +51,7 @@ function ExpenseForm({ onAddexpense, onCancel }) {
               />
             </div>
           </div>
+
           <div className="expense-form__split  expense-form__split--second ">
             <div className="expense-form__control">
               <label htmlFor="name">date</label>
